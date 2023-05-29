@@ -39,7 +39,6 @@ describe('Basic user flow for Website', () => {
 	// Step 1
 	// Right now this function is only checking the first <product-item> it found, make it so that
 	// it checks every <product-item> it found
-	console.log('Checking every product item ...');
 	for (let i = 1; i < prodItems.length; i++) {
 	    // Grab the .data property of <product-items> to grab all of the json data stored inside
 	    data = await prodItems[0].getProperty('data');
@@ -63,7 +62,6 @@ describe('Basic user flow for Website', () => {
 	// Grab the shadowRoot of that element (it's a property), then query a button from that shadowRoot.
 	// Once you have the button, you can click it and check the innerText property of the button.
 	// Once you have the innerText property, use innerText.jsonValue() to get the text value of it
-	console.log('checking product item 1');
 	const prodItem = await page.$('product-item');
 	const shadowRoot = await page.evaluateHandle((x)  => x.shadowRoot, prodItem);
 	const button = await shadowRoot.$('button');
